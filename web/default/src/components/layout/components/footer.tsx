@@ -136,6 +136,15 @@ function ProjectAttribution(props: { currentYear: number; inline?: boolean }) {
         {t('New API')}
       </a>
       . {t(NEW_API_FOOTER_ATTRIBUTION_KEY)}
+      {' · '}
+      <a
+        href='https://github.com/ssgzy/Router-new-api'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='text-foreground/70 hover:text-foreground font-medium transition-colors'
+      >
+        {t('Source code')}
+      </a>
     </span>
   )
   if (props.inline) {
@@ -158,7 +167,7 @@ export function Footer(props: FooterProps) {
   } = useSystemConfig()
 
   const displayLogo = systemLogo || props.logo || '/logo.png'
-  const displayName = systemName || props.name || 'New API'
+  const displayName = systemName || props.name || 'Code Router'
   const isDemoSiteMode = Boolean(demoSiteEnabled)
   const currentYear = new Date().getFullYear()
 
