@@ -80,9 +80,12 @@ export function LiveStatus() {
           </p>
         </AnimateInView>
 
-        <div className='border-border/40 bg-border/40 grid gap-px overflow-hidden rounded-xl border md:grid-cols-2'>
+        <div className='grid gap-4 md:grid-cols-2 md:gap-5'>
           {/* Left: model rankings */}
-          <AnimateInView animation='fade-up' className='bg-background p-7 md:p-8'>
+          <AnimateInView
+            animation='fade-up'
+            className='cr-card rounded-3xl p-7 md:p-8'
+          >
             <h3 className='mb-6 text-sm font-semibold'>
               {t('Model Rankings')}
             </h3>
@@ -115,7 +118,7 @@ export function LiveStatus() {
           <AnimateInView
             animation='fade-up'
             delay={100}
-            className='bg-background p-7 md:p-8'
+            className='cr-card rounded-3xl p-7 md:p-8'
           >
             <h3 className='mb-6 text-sm font-semibold'>
               {t('Provider Route Status')}

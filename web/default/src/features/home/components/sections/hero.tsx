@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next'
 import { useStatus } from '@/hooks/use-status'
 import { Button } from '@/components/ui/button'
 import { BaseUrlBox } from '../base-url-box'
-import { HeroTerminalDemo } from '../hero-terminal-demo'
+import { HeroCapabilityCards } from '../hero-capability-cards'
 
 interface HeroProps {
   className?: string
@@ -48,7 +48,8 @@ export function Hero(props: HeroProps) {
   const { t } = useTranslation()
   const { status } = useStatus()
   const docsUrl =
-    (status?.docs_link as string | undefined) || 'https://docs.newapi.pro'
+    (status?.docs_link as string | undefined) ||
+    'https://github.com/ssgzy/Router-new-api'
 
   const renderDocsButton = () => {
     const isExternal = docsUrl.startsWith('http')
@@ -180,7 +181,7 @@ export function Hero(props: HeroProps) {
               </span>
               <p className='text-muted-foreground/60 text-xs leading-relaxed'>
                 {t(
-                  'Supports one-click configuration and perfectly adapts to NewAPI multi-protocol configuration.'
+                  'Supports one-click configuration and perfectly adapts to Code Router multi-protocol configuration.'
                 )}
               </p>
             </div>
@@ -232,12 +233,12 @@ export function Hero(props: HeroProps) {
           </div>
         </div>
 
-        {/* Right Column: Hero Terminal API Demo */}
+        {/* Right Column: live operations capability cards */}
         <div
-          className='landing-animate-fade-up flex w-full justify-center opacity-0 lg:col-span-6'
+          className='landing-animate-fade-up flex w-full justify-center opacity-0 lg:col-span-6 lg:justify-end'
           style={{ animationDelay: '320ms' }}
         >
-          <HeroTerminalDemo className='mt-8 lg:mt-0' />
+          <HeroCapabilityCards className='mt-8 lg:mt-0' />
         </div>
       </div>
     </section>

@@ -16,27 +16,20 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
-import { type SVGProps } from 'react'
-import { cn } from '@/lib/utils'
 
-export function Logo({ className, ...props }: SVGProps<SVGSVGElement>) {
+/**
+ * Full-page soft brand wash for the marketing home page.
+ *
+ * Rendered as the first child of the PublicLayout root (which is `relative`),
+ * `absolute inset-0 -z-10` paints it over the layout's solid `bg-background`
+ * but behind every section (sections are `relative z-10`) and the header.
+ * It spans the full document height, so the section-aligned radial glows
+ * defined in `.cr-home-wash` give the page a continuous, gently rhythmic
+ * gradient — no flat white lower half. Colors are low-chroma/low-alpha so
+ * text contrast (WCAG) is preserved; a dark-mode variant lives in index.css.
+ */
+export function HomeBackdrop() {
   return (
-    <svg
-      id='code-router-logo'
-      viewBox='0 0 24 24'
-      xmlns='http://www.w3.org/2000/svg'
-      height='24'
-      width='24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      className={cn('size-6', className)}
-      {...props}
-    >
-      <title>Code Router</title>
-      <path d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3' />
-    </svg>
+    <div aria-hidden className='cr-home-wash pointer-events-none absolute inset-0 -z-10' />
   )
 }

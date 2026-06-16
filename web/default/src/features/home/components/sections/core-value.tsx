@@ -75,15 +75,17 @@ export function CoreValue(_props: CoreValueProps) {
           </p>
         </AnimateInView>
 
-        <div className='border-border/40 bg-border/40 grid gap-px overflow-hidden rounded-xl border sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4'>
           {cards.map((c, i) => (
             <AnimateInView
               key={c.title}
               delay={i * 100}
               animation='scale-in'
-              className='bg-background group hover:bg-muted/20 flex flex-col p-7 transition-colors duration-300 md:p-8'
+              className={`cr-card flex flex-col rounded-3xl p-7 md:p-8${
+                i === 0 ? ' cr-card-strong' : ''
+              }`}
             >
-              <div className='text-muted-foreground border-border/50 bg-muted/30 group-hover:text-foreground mb-4 flex size-11 items-center justify-center rounded-xl border transition-colors'>
+              <div className='cr-card-icon mb-5 flex size-12 items-center justify-center rounded-2xl text-blue-600 dark:text-blue-400'>
                 {c.icon}
               </div>
               <h3 className='mb-2 text-sm font-semibold'>{c.title}</h3>

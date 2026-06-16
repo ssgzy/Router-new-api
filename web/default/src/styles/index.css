@@ -638,3 +638,184 @@ For commercial licensing, please contact support@quantumnous.com
     animation: none;
   }
 }
+
+/* ── Home page ─────────────────────────────────────────────────────────── */
+
+/* Full-page soft brand wash (see HomeBackdrop). Section-aligned radial glows
+   give continuity + rhythm from hero to footer; low chroma/alpha keeps text
+   contrast intact. Vertical tint removes the flat white lower half. */
+.cr-home-wash {
+  background:
+    radial-gradient(
+      70% 38% at 15% 4%,
+      oklch(0.72 0.16 250 / 20%) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      55% 30% at 90% 16%,
+      oklch(0.68 0.15 200 / 16%) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      66% 34% at 3% 44%,
+      oklch(0.7 0.15 280 / 15%) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      70% 36% at 99% 62%,
+      oklch(0.7 0.15 250 / 15%) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      82% 40% at 26% 86%,
+      oklch(0.72 0.16 285 / 19%) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      oklch(0.72 0.12 250 / 9%) 0%,
+      oklch(0.82 0.06 245 / 5%) 30%,
+      oklch(0.84 0.05 265 / 5%) 55%,
+      oklch(0.78 0.08 278 / 7%) 80%,
+      oklch(0.74 0.12 288 / 10%) 100%
+    );
+}
+
+.dark .cr-home-wash {
+  background:
+    radial-gradient(
+      58% 30% at 18% 6%,
+      oklch(0.62 0.16 250 / 18%) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      46% 24% at 86% 20%,
+      oklch(0.58 0.14 200 / 14%) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      52% 24% at 6% 45%,
+      oklch(0.58 0.15 280 / 14%) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      54% 26% at 94% 65%,
+      oklch(0.6 0.14 250 / 12%) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      62% 30% at 30% 88%,
+      oklch(0.6 0.16 280 / 16%) 0%,
+      transparent 62%
+    ),
+    linear-gradient(
+      180deg,
+      oklch(0.6 0.12 250 / 8%) 0%,
+      transparent 22%,
+      transparent 66%,
+      oklch(0.58 0.13 280 / 10%) 100%
+    );
+}
+
+/* Hero capability cards: gentle floating / breathing motion. */
+@keyframes cr-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.cr-float {
+  animation: cr-float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cr-float {
+    animation: none;
+  }
+}
+
+/* Home module cards (PackyCode-style): large radius, faint brand-gradient
+   fill instead of flat white, soft shadow and no hard border, so cards melt
+   into the page wash rather than sitting on it as white boxes. Fills stay very
+   light (light) / lightly elevated (dark) to keep text contrast WCAG-safe. */
+.cr-card {
+  background: linear-gradient(
+    155deg,
+    oklch(0.99 0.008 255) 0%,
+    oklch(0.965 0.02 262) 50%,
+    oklch(0.955 0.024 286) 100%
+  );
+  box-shadow:
+    0 0 0 1px oklch(0.55 0.06 265 / 6%),
+    0 1px 2px oklch(0.5 0.05 265 / 5%),
+    0 20px 44px -24px oklch(0.45 0.08 265 / 32%);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cr-card:hover {
+  box-shadow:
+    0 0 0 1px oklch(0.55 0.06 265 / 8%),
+    0 2px 6px oklch(0.5 0.05 265 / 8%),
+    0 30px 60px -24px oklch(0.45 0.08 265 / 42%);
+}
+
+/* Accent card: a touch more saturated gradient for emphasis. */
+.cr-card-strong {
+  background: linear-gradient(
+    155deg,
+    oklch(0.955 0.04 256) 0%,
+    oklch(0.93 0.052 276) 55%,
+    oklch(0.935 0.05 292) 100%
+  );
+}
+
+/* Soft tinted icon tile (pairs with text-blue-600 / dark:text-blue-400). */
+.cr-card-icon {
+  background: linear-gradient(
+    150deg,
+    oklch(0.7 0.16 258 / 16%) 0%,
+    oklch(0.7 0.14 288 / 9%) 100%
+  );
+}
+
+.dark .cr-card {
+  background: linear-gradient(
+    155deg,
+    oklch(0.28 0.03 262 / 70%) 0%,
+    oklch(0.235 0.028 282 / 62%) 100%
+  );
+  box-shadow:
+    0 0 0 1px oklch(0.8 0.04 265 / 8%),
+    0 1px 2px oklch(0 0 0 / 30%),
+    0 24px 50px -26px oklch(0 0 0 / 70%);
+}
+
+.dark .cr-card:hover {
+  box-shadow:
+    0 0 0 1px oklch(0.8 0.04 265 / 12%),
+    0 2px 6px oklch(0 0 0 / 35%),
+    0 32px 64px -26px oklch(0 0 0 / 80%);
+}
+
+.dark .cr-card-strong {
+  background: linear-gradient(
+    155deg,
+    oklch(0.34 0.06 260 / 72%) 0%,
+    oklch(0.28 0.05 286 / 64%) 100%
+  );
+}
+
+.dark .cr-card-icon {
+  background: linear-gradient(
+    150deg,
+    oklch(0.72 0.16 258 / 20%) 0%,
+    oklch(0.7 0.14 288 / 12%) 100%
+  );
+}

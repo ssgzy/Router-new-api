@@ -30,6 +30,7 @@ import {
   ProviderWall,
   Stats,
 } from './components'
+import { HomeBackdrop } from './components/home-backdrop'
 import { useHomePageContent } from './hooks'
 
 export function Home() {
@@ -70,14 +71,20 @@ export function Home() {
 
   return (
     <PublicLayout showMainContainer={false}>
-      <Hero isAuthenticated={isAuthenticated} />
-      <ProviderWall />
-      <Stats />
-      <CoreValue />
-      <LiveStatus />
-      <HowItWorks />
-      <CTA isAuthenticated={isAuthenticated} />
-      <Footer />
+      {/* `isolate` creates a stacking context so HomeBackdrop's -z-10 wash
+          paints above the layout's solid background but behind the z-10
+          sections (and never over the header, which sits outside this div). */}
+      <div className='relative isolate'>
+        <HomeBackdrop />
+        <Hero isAuthenticated={isAuthenticated} />
+        <ProviderWall />
+        <Stats />
+        <CoreValue />
+        <LiveStatus />
+        <HowItWorks />
+        <CTA isAuthenticated={isAuthenticated} />
+        <Footer />
+      </div>
     </PublicLayout>
   )
 }
