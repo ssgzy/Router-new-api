@@ -57,7 +57,7 @@ function EmptyAboutState() {
         </div>
         <div className='space-y-4 text-sm'>
           <p>
-            {t('Code Router Repository:')}{' '}
+            {t('AI Router Repository:')}{' '}
             <a
               href='https://github.com/ssgzy/Router-new-api'
               target='_blank'
@@ -68,7 +68,7 @@ function EmptyAboutState() {
             </a>
           </p>
           <p className='text-muted-foreground'>
-            Code Router © {currentYear}.{' '}
+            AI Router © {currentYear}.{' '}
             {t('This project must be used in compliance with the')}{' '}
             <a
               href='https://github.com/ssgzy/Router-new-api/blob/main/LICENSE'

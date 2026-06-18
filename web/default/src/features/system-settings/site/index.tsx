@@ -27,7 +27,7 @@ import {
 const defaultSiteSettings: SiteSettings = {
   'theme.frontend': 'default',
   Notice: '',
-  SystemName: 'Code Router',
+  SystemName: 'AI Router',
   Logo: '',
   Footer: '',
   About: '',

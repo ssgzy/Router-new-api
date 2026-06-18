@@ -207,7 +207,7 @@ export function SystemInfoSection({ defaultValues }: SystemInfoSectionProps) {
                   <FormItem>
                     <FormLabel>{t('System Name')}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t('e.g. Code Router')} {...field} />
+                      <Input placeholder={t('e.g. AI Router')} {...field} />
                     </FormControl>
                     <FormDescription>
                       {t('The name displayed across the application')}
@@ -313,7 +313,7 @@ export function SystemInfoSection({ defaultValues }: SystemInfoSectionProps) {
                       <FormLabel>{t('Home Page Content')}</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder={t('Welcome to our Code Router...')}
+                          placeholder={t('Welcome to our AI Router...')}
                           rows={6}
                           {...field}
                         />

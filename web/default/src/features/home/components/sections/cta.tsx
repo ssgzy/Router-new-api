@@ -61,12 +61,12 @@ export function CTA(props: CTAProps) {
         </h2>
         <p className='text-muted-foreground/80 mx-auto mt-5 max-w-md text-sm leading-relaxed md:text-base'>
           {t(
-            'Connect to the Code Router API now to unify access policies and cost control, bringing stable, scalable intelligence to your products.'
+            'Connect to the AI Router API now to unify access policies and cost control, bringing stable, scalable intelligence to your products.'
           )}
         </p>
         <div className='mt-8 flex items-center justify-center gap-3'>
           <Button className='group rounded-lg' render={<Link to='/sign-up' />}>
-            {t('Connect Code Router')}
+            {t('Connect AI Router')}
             <ArrowRight className='ml-1 size-3.5 transition-transform duration-200 group-hover:translate-x-0.5' />
           </Button>
           <Button

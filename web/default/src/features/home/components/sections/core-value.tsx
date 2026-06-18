@@ -70,7 +70,7 @@ export function CoreValue(_props: CoreValueProps) {
           </h2>
           <p className='text-muted-foreground mt-4 text-sm leading-relaxed md:text-base'>
             {t(
-              'From access control and cost visibility to global scheduling, Code Router delivers end-to-end AI infrastructure for enterprises.'
+              'From access control and cost visibility to global scheduling, AI Router delivers end-to-end AI infrastructure for enterprises.'
             )}
           </p>
         </AnimateInView>

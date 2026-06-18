@@ -181,7 +181,7 @@ export function Hero(props: HeroProps) {
               </span>
               <p className='text-muted-foreground/60 text-xs leading-relaxed'>
                 {t(
-                  'Supports one-click configuration and perfectly adapts to Code Router multi-protocol configuration.'
+                  'Supports one-click configuration and perfectly adapts to AI Router multi-protocol configuration.'
                 )}
               </p>
             </div>

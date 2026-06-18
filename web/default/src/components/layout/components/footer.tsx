@@ -167,11 +167,11 @@ export function Footer(props: FooterProps) {
   } = useSystemConfig()
 
   const displayLogo = systemLogo || props.logo || '/logo.png'
-  const displayName = systemName || props.name || 'Code Router'
+  const displayName = systemName || props.name || 'AI Router'
   const isDemoSiteMode = Boolean(demoSiteEnabled)
   const currentYear = new Date().getFullYear()
 
-  // Promo/ecosystem link columns removed for Code Router (these were the
+  // Promo/ecosystem link columns removed for AI Router (these were the
   // upstream new-api docs + related-project links). Admins can still supply
   // their own footer columns via the `columns` prop.
   const fallbackColumns = useMemo<FooterColumnProps[]>(() => [], [])
